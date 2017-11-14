@@ -1,8 +1,10 @@
 (function() {
-    function HomeCtrl() {
-    }
+    function HomeCtrl(Task, $scope) {
+        this.tasks = Task.all;
+        this.taskManager = Task;
+    };
 
     angular
-        .module('blocChat')
-        .controller('HomeCtrl', [HomeCtrl]);
+        .module('blocitoff')
+        .controller('HomeCtrl', ['Task', '$scope', HomeCtrl]);
 })();

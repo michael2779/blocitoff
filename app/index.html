@@ -2,12 +2,20 @@
 <html ng-app="blocitoff">
 <head lang="en">
     <meta charset="UTF-8">
-    <title>Bloc Base Project</title>
+    <title>Blocitoff</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
+    <body>
+        <nav class='nav-bar'>
+            <ul>
+                <li><a ui-sref='home'>Tasks</a></li>
+                <li><a ui-sref='history'>History</a></li>
+            </ul>
 
-<body>
-  <ui-view></ui-view>
+        </nav>
+        <ui-view></ui-view>
 
   <!-- Angular -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
@@ -15,27 +23,30 @@
   <!-- AngularUI Router -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
 
-  <!-- FireBase -->
-    <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
-
   <!-- AngularFire -->
     <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
 
-    <script>
-      // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyB1hLuA1MMdBhRRvfJxt_Bb69L5VlPZ_24",
-        authDomain: "blocitoff-e8037.firebaseapp.com",
-        databaseURL: "https://blocitoff-e8037.firebaseio.com",
-        projectId: "blocitoff-e8037",
-        storageBucket: "blocitoff-e8037.appspot.com",
-        messagingSenderId: "928069314663"
-      };
-      firebase.initializeApp(config);
-    </script>
+
+
+  <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyB1hLuA1MMdBhRRvfJxt_Bb69L5VlPZ_24",
+      authDomain: "blocitoff-e8037.firebaseapp.com",
+      databaseURL: "https://blocitoff-e8037.firebaseio.com",
+      projectId: "blocitoff-e8037",
+      storageBucket: "blocitoff-e8037.appspot.com",
+      messagingSenderId: "928069314663"
+    };
+    firebase.initializeApp(config);
+  </script>
 
 
  <!-- Application Files -->
-    <script src="/scripts/app.js"></script>
+        <<script src="/scripts/app.js"></script>
+        <script src="/scripts/controllers/HomeCtrl.js"></script>
+        <script src="/scripts/controllers/HistoryCtrl.js"></script>
+        <script src="/scripts/factories/Task.js"></script>
 </body>
 </html>
